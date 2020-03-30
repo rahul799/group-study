@@ -1,7 +1,17 @@
 import React, { Component } from "react";
+import FacebookLogin from "react-facebook-login";
+// import GoogleLogin from "react-google-login";
 
 export default class Login extends Component {
   render() {
+    const responseFacebook = (response) => {
+      console.log(response);
+    };
+
+    // const responseGoogle = (response) => {
+    //   console.log(response);
+    // };
+
     return (
       <form>
         <h3>Sign In</h3>
@@ -23,6 +33,25 @@ export default class Login extends Component {
             placeholder="Enter password"
           />
         </div>
+
+        <div className="form-group">
+          <label>LOGIN WITH FACEBOOK</label>
+          <FacebookLogin
+            appId="175306446764360" //APP ID NOT CREATED YET
+            fields="name,email,picture"
+            callback={responseFacebook}
+          />
+        </div>
+
+        {/* <div className="form-group">
+          <label>LOGIN WITH Google</label>
+          <GoogleLogin
+            clientId="587387296925-o90s2db7immn0693t4b1e7n5qiec4sl2.apps.googleusercontent.com" //CLIENTID NOT CREATED YET
+            buttonText="LOGIN WITH GOOGLE"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+          />
+        </div> */}
 
         <div className="form-group">
           <div className="custom-control custom-checkbox">
