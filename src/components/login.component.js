@@ -35,7 +35,7 @@ export default class Login extends Component {
         </div>
 
         <div className="form-group">
-          <label>LOGIN WITH FACEBOOK</label>
+          <label>Sign-In WITH FACEBOOK</label>
           <FacebookLogin
             appId="175306446764360" //APP ID NOT CREATED YET
             fields="name,email,picture"

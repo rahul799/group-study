@@ -1,7 +1,12 @@
 import React, { Component } from "react";
+import FacebookLogin from "react-facebook-login";
 
 export default class SignUp extends Component {
   render() {
+    const responseFacebook = (response) => {
+      console.log(response);
+    };
+
     return (
       <form>
         <h3>Sign Up</h3>
@@ -35,6 +40,15 @@ export default class SignUp extends Component {
             type="password"
             className="form-control"
             placeholder="Enter password"
+          />
+        </div>
+
+        <div className="form-group">
+          <label>Sign-Up WITH FACEBOOK</label>
+          <FacebookLogin
+            appId="175306446764360" //APP ID NOT CREATED YET
+            fields="name,email,picture"
+            callback={responseFacebook}
           />
         </div>
 

@@ -12,18 +12,18 @@ function App() {
       <div className="App">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
           <div className="container">
-            <Link className="navbar-brand" to={"/sign-in"}>
+            <Link className="navbar-brand" to={"/group-study"}>
               Group-Study
             </Link>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link className="nav-link" to={"/sign-in"}>
+                  <Link className="nav-link" to={"/group-study/sign-in"}>
                     Login
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to={"/sign-up"}>
+                  <Link className="nav-link" to={"/group-study/sign-up"}>
                     Sign up
                   </Link>
                 </li>
@@ -36,8 +36,8 @@ function App() {
           <div className="auth-inner">
             <Switch>
               <Route exact path="/" component={Login} />
-              <Route path="/sign-in" component={Login} />
-              <Route path="/sign-up" component={SignUp} />
+              <Route path="/group-study/sign-in" component={Login} />
+              <Route path="/group-study/sign-up" component={SignUp} />
             </Switch>
           </div>
         </div>
