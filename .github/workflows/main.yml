@@ -1,5 +1,5 @@
 name: push-develop
-on: [push]
+on: [push,pull_request]
 jobs:
   changes:
     runs-on: ubuntu-latest
@@ -16,3 +16,14 @@ jobs:
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
           echo '${{ steps.file_changes.outputs.files_removed}}'
+          
+  testing:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: echo
+        run: |
+          echo '${{ steps.file_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo '${{ steps.file_changes.outputs.files_added}}'
+          echo '${{ steps.file_changes.outputs.files_removed}}'
+          
