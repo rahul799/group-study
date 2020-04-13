@@ -12,6 +12,8 @@ jobs:
           echo '${{ steps.file_changes.outputs.files_modified}}'
           echo '${{ steps.file_changes.outputs.files_added}}'
           echo '${{ steps.file_changes.outputs.files_removed}}'
+      - name : loop
+        run: for files in ${{ steps.file_changes.outputs.files_modified}}; do echo "$files"; done
           
   testing:
     runs-on: [ubuntu-latest]
